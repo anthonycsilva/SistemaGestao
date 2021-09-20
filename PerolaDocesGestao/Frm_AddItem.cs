@@ -41,7 +41,7 @@ namespace PerolaDocesGestao
                 int quantidadePedida = Int32.Parse(numeric_QtdProduto.Value.ToString());
                 item.QUANTIDADE_PEDIDA = quantidadePedida;
                 int idPedidoAtual = banco.recuperaID_PedidoItens();
-                int numeroPedido = 11;
+                int numeroPedido = Frm_FazerPedido.numeroPedidoAtual;
                 banco.inserePedidoItens(item, numeroPedido);
                 
             }

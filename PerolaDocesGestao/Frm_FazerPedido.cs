@@ -10,14 +10,14 @@ using DAL;
 
 namespace PerolaDocesGestao
 {
-    public partial class Frm_FazerPedido : Form
+    public partial class Frm_FazerPedido: Form
     {
+        public static int numeroPedidoAtual;
         public Frm_FazerPedido(int numeroPedido)
         {
             InitializeComponent();
             lbl_codigoPedido.Text = numeroPedido.ToString();
-
-
+            numeroPedidoAtual = numeroPedido;
         }
 
         Pedido pedido = new Pedido();
