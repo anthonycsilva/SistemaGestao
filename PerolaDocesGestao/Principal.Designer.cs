@@ -100,9 +100,9 @@ namespace PerolaDocesGestao
             this.Label_Usuario_Principal.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label_Usuario_Principal.Location = new System.Drawing.Point(86, 52);
             this.Label_Usuario_Principal.Name = "Label_Usuario_Principal";
-            this.Label_Usuario_Principal.Size = new System.Drawing.Size(78, 19);
+            this.Label_Usuario_Principal.Size = new System.Drawing.Size(68, 19);
             this.Label_Usuario_Principal.TabIndex = 4;
-            this.Label_Usuario_Principal.Text = "Usuario X";
+            this.Label_Usuario_Principal.Text = "Anthony";
             // 
             // pictureBox2
             // 
