@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using BLL;
+using DAL;
+
+namespace PerolaDocesGestao
+{
+    public partial class Frm_InserirProduto : Form
+    {
+        //instanciando objetos
+
+        Distribuidora distribuidora = new Distribuidora();
+        OperacoesBanco banco = new OperacoesBanco();
+        public Frm_InserirProduto()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        {
+            string nomeProduto = textBox_NomeProduto.Text;
+            string precoProduto = textBox_PrecoProduto.Text;
+            string quantidadeProduto = numeric_QuantidadeProduto.Text;
+            var unidadesProdutoDecimal = numeric_QuantidadeProduto.Value.ToString();
+            int unidadesProduto = Int32.Parse(unidadesProdutoDecimal);
+            int distroID = distribuidora.getDistribuidorasID(comboBox_Distribuidoras.Text);
+            banco.insereProduto(nomeProduto,precoProduto,unidadesProduto, distroID);
+        }
+
+        private void Btn_Sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_InserirDistribuidor distro = new Frm_InserirDistribuidor();
+            distro.Show();
+        }
+
+        private void comboBox_Distribuidoras_Click(object sender, EventArgs e)
+        {
+            var dados = distribuidora.getDistribuidoras();
+            comboBox_Distribuidoras.DataSource = dados;
+            comboBox_Distribuidoras.DisplayMember = "NOME_DISTRIBUIDORA";
+            comboBox_Distribuidoras.ValueMember = "ID_DISTRIBUIDORA";
+        }
+    }
+}
