@@ -35,11 +35,12 @@ namespace BLL
             return pessoa;
         }
 
-        public Cliente cadastrarCliente(Pessoa pessoa, string estado, string cidade, string rua, int numero_residencia, string cep)
+        public Cliente cadastrarCliente(Pessoa pessoa, string estado, string cidade, string bairro ,string rua, int numero_residencia, string cep)
         {
             Cliente cliente = new Cliente();
             cliente.ID_PESSOA = pessoa.ID_PESSOA;
             cliente.ESTADO = estado;
+            cliente.BAIRRO = bairro;
             cliente.CIDADE = cidade;
             cliente.RUA = rua;
             cliente.NUMERO_RESIDENCIA = numero_residencia;

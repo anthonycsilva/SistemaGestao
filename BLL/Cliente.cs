@@ -14,6 +14,7 @@ namespace BLL
         public int ID_PESSOA { get; set; }
         public string ESTADO { get; set; }
         public string CIDADE { get; set; }
+        public string BAIRRO { get; set; }
         public string RUA { get; set; }
         public int NUMERO_RESIDENCIA { get; set; }
         public string CEP { get; set; }

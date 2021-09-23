@@ -38,7 +38,7 @@ namespace DAL
 
         public void insereCliente(Cliente cliente)
         {
-            string instrucaoCliente = $"insert into Cliente (ID_PESSOA, ESTADO, CIDADE, RUA, NUMERO_RESIDENCIA, CEP) values ({cliente.ID_PESSOA}, '{cliente.ESTADO}', '{cliente.CIDADE}', '{cliente.RUA}', {cliente.NUMERO_RESIDENCIA}, '{cliente.CEP}');";
+            string instrucaoCliente = $"insert into Cliente (ID_PESSOA, ESTADO, CIDADE, BAIRRO, RUA, NUMERO_RESIDENCIA, CEP) values ({cliente.ID_PESSOA}, '{cliente.ESTADO}', '{cliente.CIDADE}', '{cliente.BAIRRO}' ,'{cliente.RUA}', {cliente.NUMERO_RESIDENCIA}, '{cliente.CEP}');";
             SqlConnection con = new SqlConnection(this.CONEXAO);
 
             try

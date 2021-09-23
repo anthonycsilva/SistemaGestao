@@ -37,6 +37,7 @@ namespace PerolaDocesGestao
                 string cpf = textBox_CPF.Text;
 
                 string estado = textBox_Estado.Text.ToUpper();
+                string bairro = textBox_Bairro.Text.ToUpper();
                 string cidade = textBox_Cidade.Text.ToUpper();
                 string residenciaString = textBox_NumeroResidencia.Text;
                 int numero_residencia = Int32.Parse(residenciaString);
@@ -50,7 +51,7 @@ namespace PerolaDocesGestao
                     banco.inserePessoa(pessoa);
                     int x = banco.VerificaExistenciaPessoa();
                     pessoa.ID_PESSOA = x;
-                    Cliente cliente = vendedor.cadastrarCliente(pessoa, estado, cidade, rua, numero_residencia, cep);
+                    Cliente cliente = vendedor.cadastrarCliente(pessoa, estado, cidade, bairro ,rua, numero_residencia, cep);
                     banco.insereCliente(cliente);
                     MessageBox.Show("Sucesso!", "Cliente cadastrado com Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

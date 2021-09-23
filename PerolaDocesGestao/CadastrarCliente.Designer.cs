@@ -49,6 +49,8 @@ namespace PerolaDocesGestao
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btn_Sair = new System.Windows.Forms.Button();
+            this.textBox_Bairro = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -104,7 +106,7 @@ namespace PerolaDocesGestao
             // 
             // textBox_CEP
             // 
-            this.textBox_CEP.Location = new System.Drawing.Point(267, 248);
+            this.textBox_CEP.Location = new System.Drawing.Point(267, 212);
             this.textBox_CEP.Name = "textBox_CEP";
             this.textBox_CEP.Size = new System.Drawing.Size(211, 23);
             this.textBox_CEP.TabIndex = 7;
@@ -113,7 +115,7 @@ namespace PerolaDocesGestao
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(220, 248);
+            this.label4.Location = new System.Drawing.Point(220, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 19);
             this.label4.TabIndex = 6;
@@ -121,7 +123,7 @@ namespace PerolaDocesGestao
             // 
             // textBox_Estado
             // 
-            this.textBox_Estado.Location = new System.Drawing.Point(267, 277);
+            this.textBox_Estado.Location = new System.Drawing.Point(267, 241);
             this.textBox_Estado.Name = "textBox_Estado";
             this.textBox_Estado.Size = new System.Drawing.Size(211, 23);
             this.textBox_Estado.TabIndex = 9;
@@ -130,7 +132,7 @@ namespace PerolaDocesGestao
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(205, 276);
+            this.label5.Location = new System.Drawing.Point(205, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 8;
@@ -231,12 +233,31 @@ namespace PerolaDocesGestao
             this.btn_Sair.UseVisualStyleBackColor = false;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
+            // textBox_Bairro
+            // 
+            this.textBox_Bairro.Location = new System.Drawing.Point(267, 273);
+            this.textBox_Bairro.Name = "textBox_Bairro";
+            this.textBox_Bairro.Size = new System.Drawing.Size(211, 23);
+            this.textBox_Bairro.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(201, 273);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 19);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "BAIRRO:";
+            // 
             // CadastrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.textBox_Bairro);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.lbl_Log);
             this.Controls.Add(this.label9);
@@ -287,5 +308,7 @@ namespace PerolaDocesGestao
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbl_Log;
         private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.TextBox textBox_Bairro;
+        private System.Windows.Forms.Label label10;
     }
 }
