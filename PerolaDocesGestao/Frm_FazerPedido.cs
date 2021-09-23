@@ -19,9 +19,9 @@ namespace PerolaDocesGestao
             lbl_codigoPedido.Text = numeroPedido.ToString();
             numeroPedidoAtual = numeroPedido;
         }
-
         Pedido pedido = new Pedido();
         OperacoesBanco banco = new OperacoesBanco();
+        Temp temp = new Temp();
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,8 +34,27 @@ namespace PerolaDocesGestao
 
         private void dataGridView_ListaItens_Click(object sender, EventArgs e)
         {
-            DataTable dt = pedido.getTemp();
-            dataGridView_ListaItens.DataSource = dt;
+            DataTable dt_Pedidos = pedido.getTemp();
+            dataGridView_ListaItens.DataSource = dt_Pedidos;
+
+            //DataTable dt_CalculoTotal = temp.getTemp2();
+
+            DataTableReader dtr = new DataTableReader(dt_Pedidos);
+            MetodosGerais gerais = new MetodosGerais();
+            double total;
+            double totalFinal = 0;
+            while (dtr.Read())
+            {
+                double preco = Double.Parse(dtr["PRECO"].ToString());
+                int qtd = gerais.converteStringInt(dtr["QTD_ESCOLHIDA"].ToString());
+                total = preco * qtd;
+                totalFinal += total;
+            }
+
+            totalFinal = Math.Round(totalFinal, 2);
+            lbl_totalGeral.Text = totalFinal.ToString("F2");
+
+
         }
 
         private void Frm_FazerPedido_Load(object sender, EventArgs e)

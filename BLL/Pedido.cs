@@ -24,7 +24,7 @@ namespace BLL
         {
             try
             {
-                string comando = @"SELECT PedidoItens.ID_PRODUTO, PedidoItens.NOME_PRODUTO, PedidoItens.QTD_ESTOQUE, Produto.PRECO FROM PedidoItens
+                string comando = @"SELECT PedidoItens.ID_PRODUTO, PedidoItens.NOME_PRODUTO, PedidoItens.QTD_ESTOQUE as QTD_ESCOLHIDA, Produto.PRECO FROM PedidoItens
                                    INNER JOIN Temp on PedidoItens.ID_PEDIDOITENS = Temp.ID_PRODUTO
                                    INNER JOIN Produto on PedidoItens.ID_PRODUTO = Produto.ID_PRODUTO;";
 
