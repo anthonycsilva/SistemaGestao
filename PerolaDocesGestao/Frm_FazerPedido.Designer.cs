@@ -125,6 +125,7 @@ namespace PerolaDocesGestao
             this.comboBox_Clientes.Name = "comboBox_Clientes";
             this.comboBox_Clientes.Size = new System.Drawing.Size(199, 23);
             this.comboBox_Clientes.TabIndex = 20;
+            this.comboBox_Clientes.TextChanged += new System.EventHandler(this.comboBox_Clientes_TextChanged);
             // 
             // label5
             // 

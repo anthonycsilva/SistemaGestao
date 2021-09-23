@@ -59,5 +59,19 @@ namespace PerolaDocesGestao
         {
 
         }
+
+        private void comboBox_Clientes_TextChanged(object sender, EventArgs e)
+        {
+            Cliente clientes = new Cliente();
+            DataTable dt = clientes.getCliente(comboBox_Clientes.Text);
+
+            DataTableReader dtr = new DataTableReader(dt);
+            while (dtr.Read())
+            {
+                lbl_Rua.Text = dtr["RUA"].ToString();
+                lbl_Cidade.Text = dtr["CIDADE"].ToString();
+                lbl_Bairro.Text = dtr["BAIRRO"].ToString();
+            }
+        }
     }
 }

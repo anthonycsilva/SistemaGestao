@@ -39,6 +39,24 @@ namespace BLL
 
         }
 
+        public DataTable getCliente(string nome)
+        {
+            try
+            {
+                Banco banco = new Banco();
+                string comando = $"SELECT Pessoa.ID_PESSOA, Pessoa.NOME,Pessoa.CPF, Cliente.CIDADE,Cliente.BAIRRO, Cliente.RUA,Cliente.ESTADO FROM Pessoa INNER JOIN Cliente ON Pessoa.ID_PESSOA = Cliente.ID_PESSOA WHERE NOME = '{nome}';";
+                SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
+                DataTable dt = new DataTable();
+                resultado.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
     }
 
 }
