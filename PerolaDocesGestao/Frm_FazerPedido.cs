@@ -34,7 +34,7 @@ namespace PerolaDocesGestao
 
         private void dataGridView_ListaItens_Click(object sender, EventArgs e)
         {
-            DataTable dt_Pedidos = pedido.getTemp();
+            DataTable dt_Pedidos = pedido.getTemp(Frm_FazerPedido.numeroPedidoAtual);
             dataGridView_ListaItens.DataSource = dt_Pedidos;
 
             //DataTable dt_CalculoTotal = temp.getTemp2();
@@ -60,7 +60,7 @@ namespace PerolaDocesGestao
         private void Frm_FazerPedido_Load(object sender, EventArgs e)
         {
             banco.limpaTemp();
-            DataTable dt = pedido.getTemp();
+            DataTable dt = pedido.getTemp(Frm_FazerPedido.numeroPedidoAtual);
             dataGridView_ListaItens.DataSource = dt;
 
             Cliente clientes = new Cliente();

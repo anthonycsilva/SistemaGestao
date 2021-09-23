@@ -20,13 +20,11 @@ namespace BLL
 
         Banco banco = new Banco();
 
-        public DataTable getTemp()
+        public DataTable getTemp(int id_pedidoItens)
         {
             try
             {
-                string comando = @"SELECT PedidoItens.ID_PRODUTO, PedidoItens.NOME_PRODUTO, PedidoItens.QTD_ESTOQUE as QTD_ESCOLHIDA, Produto.PRECO FROM PedidoItens
-                                   INNER JOIN Temp on PedidoItens.ID_PEDIDOITENS = Temp.ID_PRODUTO
-                                   INNER JOIN Produto on PedidoItens.ID_PRODUTO = Produto.ID_PRODUTO;";
+                string comando = $@"SELECT ID_PRODUTO, NOME_PRODUTO, QTD_ESTOQUE AS QTD_ESCOLHIDA, PRECO_UNIDADE AS PRECO FROM PedidoItens WHERE ID_PEDIDOITENS={id_pedidoItens};";
 
 
                 SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
