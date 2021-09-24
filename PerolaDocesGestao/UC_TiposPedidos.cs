@@ -4,30 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using BLL;
+using System.Windows.Forms;
 
 namespace PerolaDocesGestao
 {
-    public partial class UC_ListaPedidos : UserControl
+    public partial class UC_TiposPedidos : UserControl
     {
-        public UC_ListaPedidos()
+        public UC_TiposPedidos()
         {
             InitializeComponent();
         }
 
-        private void UC_ListaPedidos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_AdicionarPedido_Click(object sender, EventArgs e)
+        private void btn_gerarPedido_Click(object sender, EventArgs e)
         {
             MetodosGerais gerais = new MetodosGerais();
             int codigoPedido = gerais.gerarCodigoPedido();
             Frm_FazerPedido fazerPedido = new Frm_FazerPedido(codigoPedido);
             fazerPedido.ShowDialog();
-
         }
     }
 }

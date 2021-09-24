@@ -78,7 +78,6 @@ D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Deb
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.Frm_Principal.resources
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.Properties.Resources.resources
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.UC_ListaEstoque.resources
-D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.UC_ListaPedidos.resources
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.UC_ListaProduto.resources
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.UC_ClienteLista.resources
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.csproj.GenerateResource.cache
@@ -90,3 +89,4 @@ D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Deb
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.dll
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.pdb
 D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.genruntimeconfig.cache
+D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.UC_TiposPedidos.resources

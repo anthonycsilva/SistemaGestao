@@ -22,7 +22,7 @@
     <Compile Update="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UC_ListaPedidos.cs">
+    <Compile Update="UC_TiposPedidos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UI\UC_ListaCliente.cs">

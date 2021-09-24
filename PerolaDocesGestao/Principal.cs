@@ -25,9 +25,10 @@ namespace PerolaDocesGestao
             Btn_Estoque_Principal.BackColor = Color.Gray;
             Btn_Produtos_Principal.BackColor = Color.Gray;
 
-            UC_ListaPedidos pedidosLista = new UC_ListaPedidos();
+            UC_TiposPedidos tiposPedidos = new UC_TiposPedidos();
+
             Panel_Principal.Controls.Clear();
-            Panel_Principal.Controls.Add(pedidosLista); 
+            Panel_Principal.Controls.Add(tiposPedidos); 
         }
 
         private void Btn_Clientes_Principal_Click(object sender, EventArgs e)

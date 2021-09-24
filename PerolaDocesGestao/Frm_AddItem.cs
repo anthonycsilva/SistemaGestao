@@ -41,7 +41,17 @@ namespace PerolaDocesGestao
                 int quantidadePedida = Int32.Parse(numeric_QtdProduto.Value.ToString());
                 item.QUANTIDADE_PEDIDA = quantidadePedida;
                 int numeroPedido = Frm_FazerPedido.numeroPedidoAtual;
-                banco.inserePedidoItens(item, numeroPedido);
+                try
+                {
+                    banco.inserePedidoItens(item, numeroPedido);
+                    MessageBox.Show($"O Produto {item.NOME_PRODUTO}, com {quantidadePedida} unidades, foi adicionado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception k)
+                {
+
+                    MessageBox.Show($"Erro! {k}","Aconteceu um erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 
             }
                
