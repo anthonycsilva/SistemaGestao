@@ -31,16 +31,25 @@ namespace PerolaDocesGestao
         {
             string cnpjDistro = textBox_CNPJDistribuidora.Text;
             string nomeDistro = textBox_NomeDistribuidora.Text.ToUpper();
-            try
+            if (string.IsNullOrEmpty(nomeDistro) || string.IsNullOrEmpty(cnpjDistro))
             {
-                OperacoesBanco banco = new OperacoesBanco();
-                banco.insereDistribuidora(nomeDistro, cnpjDistro);
+                MessageBox.Show("Erro!, Nome e o CNPJ não podem ser nulos!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception k)
+            else
             {
-                MessageBox.Show($"Erro! {k}", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw k;
+                try
+                {
+                    OperacoesBanco banco = new OperacoesBanco();
+                    banco.insereDistribuidora(nomeDistro, cnpjDistro);
+                    MessageBox.Show($"Distribuidora, {nomeDistro}, cadastrada com sucesso!");
+                }
+                catch (Exception k)
+                {
+                    MessageBox.Show($"Erro! {k}", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw k;
+                }
             }
+            
             
         }
     }

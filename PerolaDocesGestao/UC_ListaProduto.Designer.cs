@@ -38,7 +38,6 @@ namespace PerolaDocesGestao
             this.dataGridView_Produto = new System.Windows.Forms.DataGridView();
             this.btn_InserirProduto = new System.Windows.Forms.Button();
             this.btn_AlterarProduto = new System.Windows.Forms.Button();
-            this.btn_ExcluirProduto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +53,7 @@ namespace PerolaDocesGestao
             this.btn_AtualizarLista.TabIndex = 19;
             this.btn_AtualizarLista.Text = "Atualizar Lista";
             this.btn_AtualizarLista.UseVisualStyleBackColor = false;
+            this.btn_AtualizarLista.Click += new System.EventHandler(this.btn_AtualizarLista_Click);
             // 
             // btn_GerarRelatório
             // 
@@ -92,6 +92,7 @@ namespace PerolaDocesGestao
             this.textBox_PesquisaNomeProduto.Name = "textBox_PesquisaNomeProduto";
             this.textBox_PesquisaNomeProduto.Size = new System.Drawing.Size(234, 23);
             this.textBox_PesquisaNomeProduto.TabIndex = 13;
+            this.textBox_PesquisaNomeProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_PesquisaNomeProduto_KeyPress);
             // 
             // label1
             // 
@@ -142,26 +143,13 @@ namespace PerolaDocesGestao
             this.btn_AlterarProduto.TabIndex = 21;
             this.btn_AlterarProduto.Text = "Alterar Produto";
             this.btn_AlterarProduto.UseVisualStyleBackColor = false;
-            // 
-            // btn_ExcluirProduto
-            // 
-            this.btn_ExcluirProduto.BackColor = System.Drawing.Color.Gray;
-            this.btn_ExcluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_ExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ExcluirProduto.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ExcluirProduto.Location = new System.Drawing.Point(457, 86);
-            this.btn_ExcluirProduto.Name = "btn_ExcluirProduto";
-            this.btn_ExcluirProduto.Size = new System.Drawing.Size(139, 23);
-            this.btn_ExcluirProduto.TabIndex = 22;
-            this.btn_ExcluirProduto.Text = "Excluir Produto";
-            this.btn_ExcluirProduto.UseVisualStyleBackColor = false;
+            this.btn_AlterarProduto.Click += new System.EventHandler(this.btn_AlterarProduto_Click);
             // 
             // UC_ListaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.btn_ExcluirProduto);
             this.Controls.Add(this.btn_AlterarProduto);
             this.Controls.Add(this.btn_InserirProduto);
             this.Controls.Add(this.btn_AtualizarLista);
@@ -173,7 +161,6 @@ namespace PerolaDocesGestao
             this.Controls.Add(this.dataGridView_Produto);
             this.Name = "UC_ListaProduto";
             this.Size = new System.Drawing.Size(613, 600);
-            this.Load += new System.EventHandler(this.UC_ListaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,6 +178,5 @@ namespace PerolaDocesGestao
         private System.Windows.Forms.DataGridView dataGridView_Produto;
         private System.Windows.Forms.Button btn_InserirProduto;
         private System.Windows.Forms.Button btn_AlterarProduto;
-        private System.Windows.Forms.Button btn_ExcluirProduto;
     }
 }

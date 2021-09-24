@@ -29,7 +29,24 @@ namespace PerolaDocesGestao
             var unidadesProdutoDecimal = numeric_QuantidadeProduto.Value.ToString();
             int unidadesProduto = Int32.Parse(unidadesProdutoDecimal);
             int distroID = distribuidora.getDistribuidorasID(comboBox_Distribuidoras.Text);
-            banco.insereProduto(nomeProduto,precoProduto,unidadesProduto, distroID);
+            if (unidadesProduto <= 0)
+            {
+                MessageBox.Show("Erro!, Não pode adicionar 0 produtos ou valores negativos!");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    banco.insereProduto(nomeProduto, precoProduto, unidadesProduto, distroID);
+                }
+                catch (Exception k)
+                {
+                    MessageBox.Show($"Ocorreu um erro {k}, verifique o que foi digitado", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw k;
+                }
+                
+            }
         }
 
         private void Btn_Sair_Click(object sender, EventArgs e)

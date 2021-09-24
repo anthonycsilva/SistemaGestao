@@ -54,12 +54,32 @@ namespace BLL
             
             
         }
+        public DataTable getDadosPesquisaNome(string input)
+        {
+            Banco banco = new Banco();
+            DataTable dataTable = new DataTable();
+
+            string instrucao = $@"SELECT * FROM PRODUTO WHERE NOME_PRODUTO LIKE '%{input}%'";
+
+            try
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+
+        }
         public DataTable getDadosPesquisaID(string numero)
         {
             Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
-            string instrucao = $@"SELECT * FROM PRODUTO WHERE NOME_PRODUTO LIKE '%{numero}%'";
+            string instrucao = $@"SELECT * FROM PRODUTO WHERE ID_PRODUTO LIKE '%{numero}%'";
 
             try
             {

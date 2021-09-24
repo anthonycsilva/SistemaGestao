@@ -57,6 +57,7 @@ namespace DAL
             }
         }
 
+        // ABA DE PROTUDOS
         public void insereProduto(string nome, string preco, int unidade, int id_distribuidora)
         {
             string instrucaoProduto = $"insert into Produto (NOME_PRODUTO, PRECO) values ('{nome}', {preco});";
@@ -98,9 +99,9 @@ namespace DAL
             }
         }
 
-        public void deletaEstoque(int id_produto, int quantidade)
+        public void alteraProduto(Produto produto)
         {
-           
+           var i =  produto.ID_PRODUTO; // FAZER AQUI AONDE SERÁ SELECIONADO O ID DO PRODUTO PARA SER ALTERADO
         }
 
         public void insereDistribuidora(string nome, string cnpj)
