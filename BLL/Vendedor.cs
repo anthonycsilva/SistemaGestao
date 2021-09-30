@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace BLL
 {
-    public class Vendedor
+    public class Vendedor : Pessoa
     {
         protected int ID_VENDEDOR { get; set; }
 

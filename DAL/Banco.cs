@@ -122,24 +122,6 @@ namespace DAL
 
         }
 
-        public int VerificaExistenciaPessoa()
-        {
-            Banco banco = new Banco();
-            string pesquisaProduto = "SELECT TOP 1 * FROM [Pessoa] ORDER BY ID_PESSOA DESC";
-            SqlDataAdapter resultados = new SqlDataAdapter(pesquisaProduto, banco.CONEXAO);
-            DataTable ultimoSelecioando = new DataTable();
-            resultados.Fill(ultimoSelecioando);
-            DataTableReader dt = new DataTableReader(ultimoSelecioando);
-            int idInteiro = 0;
-            while (dt.Read())
-            {
-                string idString = dt["ID_PESSOA"].ToString();
-                idInteiro = Int32.Parse(idString);
-            }
-            return idInteiro;
-
-
-        }
 
         public void inserePedidoItens(PedidoItens item, int id_pedidoItens)
         {
