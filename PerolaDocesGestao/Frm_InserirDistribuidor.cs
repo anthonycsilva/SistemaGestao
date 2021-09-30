@@ -39,7 +39,7 @@ namespace PerolaDocesGestao
             {
                 try
                 {
-                    OperacoesBanco banco = new OperacoesBanco();
+                    Banco banco = new Banco();
                     banco.insereDistribuidora(nomeDistro, cnpjDistro);
                     MessageBox.Show($"Distribuidora, {nomeDistro}, cadastrada com sucesso!");
                 }

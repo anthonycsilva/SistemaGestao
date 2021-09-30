@@ -14,7 +14,7 @@ namespace PerolaDocesGestao
     {
         Produto produto = new Produto();
         MetodosGerais gerais = new MetodosGerais();
-        OperacoesBanco banco = new OperacoesBanco();
+        Banco banco = new Banco();
         public UC_ListaProduto()
         {
             InitializeComponent();

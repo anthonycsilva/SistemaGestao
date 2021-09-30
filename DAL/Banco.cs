@@ -9,32 +9,9 @@ using BLL;
 
 namespace DAL
 {
-    public class OperacoesBanco
+    public class Banco
     {
         public string CONEXAO { get; set; } = @"Server=DESKTOP-5P62EHD\SQLEXPRESS;Database=PerolaDocesGestao;Trusted_Connection=True;";
-
-        public void inserePessoa(Pessoa pessoa)
-        {
-            string instrucaoPessoa = $"INSERT INTO Pessoa (NOME, IDADE, CPF, VENDEDOR) VALUES ('{pessoa.NOME}',{pessoa.IDADE},'{pessoa.CPF}', 0);";
-            SqlConnection con = new SqlConnection(this.CONEXAO);
-
-            try
-            {
-                con.Open();
-                SqlCommand comando = new SqlCommand(instrucaoPessoa,con);
-                comando.ExecuteScalar();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {                
-                con.Close();
-            }
-
-            
-        }
 
         public void insereCliente(Cliente cliente)
         {
@@ -106,7 +83,7 @@ namespace DAL
 
         public void insereDistribuidora(string nome, string cnpj)
         {
-            OperacoesBanco banco = new OperacoesBanco();
+            Banco banco = new Banco();
             string instrucao = $"insert into Distribuidora (NOME_DISTRIBUIDORA, CNPJ_DISTRIBUIDORA) values ('{nome}', '{cnpj}')";
             SqlConnection con = new SqlConnection(this.CONEXAO);
             try
@@ -128,7 +105,7 @@ namespace DAL
 
         public int VerificaExistencia()
         {
-            OperacoesBanco banco = new OperacoesBanco();
+            Banco banco = new Banco();
             string pesquisaProduto = "SELECT TOP 1 * FROM [Produto] ORDER BY ID_PRODUTO DESC";
             SqlDataAdapter resultados = new SqlDataAdapter(pesquisaProduto, banco.CONEXAO);
             DataTable ultimoSelecioando = new DataTable();
@@ -147,7 +124,7 @@ namespace DAL
 
         public int VerificaExistenciaPessoa()
         {
-            OperacoesBanco banco = new OperacoesBanco();
+            Banco banco = new Banco();
             string pesquisaProduto = "SELECT TOP 1 * FROM [Pessoa] ORDER BY ID_PESSOA DESC";
             SqlDataAdapter resultados = new SqlDataAdapter(pesquisaProduto, banco.CONEXAO);
             DataTable ultimoSelecioando = new DataTable();
@@ -254,7 +231,7 @@ namespace DAL
 
         public int recuperaID_PedidoItens()
         {
-            OperacoesBanco banco = new OperacoesBanco();
+            Banco banco = new Banco();
             string pesquisaProduto = "SELECT TOP 1 * FROM [PedidoItens] ORDER BY ID_PEDIDOITENS DESC";
             SqlDataAdapter resultados = new SqlDataAdapter(pesquisaProduto, banco.CONEXAO);
             DataTable ultimoSelecioando = new DataTable();

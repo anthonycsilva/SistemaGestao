@@ -15,7 +15,7 @@ namespace PerolaDocesGestao
         //instanciando objetos
 
         Distribuidora distribuidora = new Distribuidora();
-        OperacoesBanco banco = new OperacoesBanco();
+        Banco banco = new Banco();
         public Frm_InserirProduto()
         {
             InitializeComponent();

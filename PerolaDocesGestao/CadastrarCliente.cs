@@ -12,7 +12,8 @@ namespace PerolaDocesGestao
 {
     public partial class CadastrarCliente : Form
     {
-        OperacoesBanco banco = new OperacoesBanco();
+        BancoPessoa bp = new BancoPessoa();
+        BancoCliente bc = new BancoCliente();
         Cliente cliente = new Cliente();
         Vendedor vendedor = new Vendedor();
         
@@ -48,11 +49,11 @@ namespace PerolaDocesGestao
                
                 try
                 {
-                    banco.inserePessoa(pessoa);
-                    int x = banco.VerificaExistenciaPessoa();
+                    bp.inserePessoa(pessoa);
+                    int x = bp.VerificaExistenciaPessoa();
                     pessoa.ID_PESSOA = x;
                     Cliente cliente = vendedor.cadastrarCliente(pessoa, estado, cidade, bairro ,rua, numero_residencia, cep);
-                    banco.insereCliente(cliente);
+                    bc.insereCliente(cliente);
                     MessageBox.Show("Sucesso!", "Cliente cadastrado com Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception k)
