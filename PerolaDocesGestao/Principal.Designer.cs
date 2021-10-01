@@ -29,19 +29,16 @@ namespace PerolaDocesGestao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_Pedidos_Principal = new System.Windows.Forms.Button();
             this.Btn_Clientes_Principal = new System.Windows.Forms.Button();
             this.Btn_Estoque_Principal = new System.Windows.Forms.Button();
             this.Label_Usuario_Principal = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Btn_Sair_Principal = new System.Windows.Forms.Button();
             this.Btn_Produtos_Principal = new System.Windows.Forms.Button();
             this.Panel_Principal = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,16 +101,6 @@ namespace PerolaDocesGestao
             this.Label_Usuario_Principal.TabIndex = 4;
             this.Label_Usuario_Principal.Text = "Anthony";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(111, 532);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(77, 68);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // Btn_Sair_Principal
             // 
             this.Btn_Sair_Principal.BackColor = System.Drawing.Color.Gray;
@@ -152,7 +139,6 @@ namespace PerolaDocesGestao
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Controls.Add(this.Btn_Produtos_Principal);
             this.panel1.Controls.Add(this.Btn_Sair_Principal);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.Label_Usuario_Principal);
             this.panel1.Controls.Add(this.Btn_Estoque_Principal);
             this.panel1.Controls.Add(this.Btn_Clientes_Principal);
@@ -177,7 +163,6 @@ namespace PerolaDocesGestao
             this.Text = "PerolaDoces Gestão";
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -191,7 +176,6 @@ namespace PerolaDocesGestao
         private System.Windows.Forms.Button Btn_Clientes_Principal;
         private System.Windows.Forms.Button Btn_Estoque_Principal;
         private System.Windows.Forms.Label Label_Usuario_Principal;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Btn_Sair_Principal;
         private System.Windows.Forms.Button Btn_Produtos_Principal;
         private System.Windows.Forms.Panel Panel_Principal;
