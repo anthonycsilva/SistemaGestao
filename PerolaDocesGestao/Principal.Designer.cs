@@ -45,7 +45,7 @@ namespace PerolaDocesGestao
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PerolaDocesGestao.Properties.Resources.user_bW;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(77, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -95,11 +95,11 @@ namespace PerolaDocesGestao
             // 
             this.Label_Usuario_Principal.AutoSize = true;
             this.Label_Usuario_Principal.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Label_Usuario_Principal.Location = new System.Drawing.Point(86, 52);
+            this.Label_Usuario_Principal.Location = new System.Drawing.Point(39, 86);
             this.Label_Usuario_Principal.Name = "Label_Usuario_Principal";
-            this.Label_Usuario_Principal.Size = new System.Drawing.Size(68, 19);
+            this.Label_Usuario_Principal.Size = new System.Drawing.Size(105, 19);
             this.Label_Usuario_Principal.TabIndex = 4;
-            this.Label_Usuario_Principal.Text = "Anthony";
+            this.Label_Usuario_Principal.Text = "UsuarioLogin";
             // 
             // Btn_Sair_Principal
             // 
