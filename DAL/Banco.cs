@@ -13,94 +13,12 @@ namespace DAL
     {
         public string CONEXAO { get; set; } = @"Server=DESKTOP-5P62EHD\SQLEXPRESS;Database=PerolaDocesGestao;Trusted_Connection=True;";
 
-        public void insereCliente(Cliente cliente)
-        {
-            string instrucaoCliente = $"insert into Cliente (ID_PESSOA, ESTADO, CIDADE, BAIRRO, RUA, NUMERO_RESIDENCIA, CEP) values ({cliente.ID_PESSOA}, '{cliente.ESTADO}', '{cliente.CIDADE}', '{cliente.BAIRRO}' ,'{cliente.RUA}', {cliente.NUMERO_RESIDENCIA}, '{cliente.CEP}');";
-            SqlConnection con = new SqlConnection(this.CONEXAO);
-
-            try
-            {
-                con.Open();
-                SqlCommand comando = new SqlCommand(instrucaoCliente, con);
-                comando.ExecuteScalar();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
 
         // ABA DE PROTUDOS
-        public void insereProduto(string nome, string preco, int unidade, int id_distribuidora)
-        {
-            string instrucaoProduto = $"insert into Produto (NOME_PRODUTO, PRECO) values ('{nome}', {preco});";
-            SqlConnection con = new SqlConnection(this.CONEXAO);
-            try
-            {
-                con.Open();
-                SqlCommand comando = new SqlCommand(instrucaoProduto, con);
-                comando.ExecuteScalar();
-
-                int enderecoProduto = VerificaExistencia();
-                DateTime dateTime = DateTime.Now;
-                insereEstoque(enderecoProduto, dateTime.ToString(),unidade, id_distribuidora, con);
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        public void insereEstoque(int id_produto, string data_entrada, int unidade, int id_distribuidora, SqlConnection con)
-        {
-            string instrucaoProduto = $"insert into Estoque (ID_PRODUTO, DATA_ENTRADA, UNIDADES, ID_DISTRIBUIDORA) values ({id_produto},'{data_entrada}', {unidade},{id_distribuidora});";
-            try
-            {
-                SqlCommand comando = new SqlCommand(instrucaoProduto, con);
-                comando.ExecuteScalar();
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-        }
 
         public void alteraProduto(Produto produto)
         {
            var i =  produto.ID_PRODUTO; // FAZER AQUI AONDE SERÁ SELECIONADO O ID DO PRODUTO PARA SER ALTERADO
-        }
-
-        public void insereDistribuidora(string nome, string cnpj)
-        {
-            Banco banco = new Banco();
-            string instrucao = $"insert into Distribuidora (NOME_DISTRIBUIDORA, CNPJ_DISTRIBUIDORA) values ('{nome}', '{cnpj}')";
-            SqlConnection con = new SqlConnection(this.CONEXAO);
-            try
-            {
-                con.Open();
-                SqlCommand comando = new SqlCommand(instrucao, con);
-                comando.ExecuteScalar();
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-            finally
-            {
-                con.Close();
-            }
         }
 
         public int VerificaExistencia()

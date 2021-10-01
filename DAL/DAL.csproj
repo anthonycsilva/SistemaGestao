@@ -61,6 +61,7 @@
     <Compile Include="BancoCliente.cs" />
     <Compile Include="BancoDistribuidora.cs" />
     <Compile Include="BancoPessoa.cs" />
+    <Compile Include="BancoProdutoEstoque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

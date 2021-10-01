@@ -15,7 +15,7 @@ namespace PerolaDocesGestao
         //instanciando objetos
 
         Distribuidora distribuidora = new Distribuidora();
-        Banco banco = new Banco();
+        BancoProdutoEstoque banco = new BancoProdutoEstoque();
         public Frm_InserirProduto()
         {
             InitializeComponent();
@@ -25,7 +25,6 @@ namespace PerolaDocesGestao
         {
             string nomeProduto = textBox_NomeProduto.Text;
             string precoProduto = textBox_PrecoProduto.Text;
-            string quantidadeProduto = numeric_QuantidadeProduto.Text;
             var unidadesProdutoDecimal = numeric_QuantidadeProduto.Value.ToString();
             int unidadesProduto = Int32.Parse(unidadesProdutoDecimal);
             int distroID = distribuidora.getDistribuidorasID(comboBox_Distribuidoras.Text);
@@ -39,6 +38,7 @@ namespace PerolaDocesGestao
                 try
                 {
                     banco.insereProduto(nomeProduto, precoProduto, unidadesProduto, distroID);
+                    MessageBox.Show($"Sucesso!, o produto {nomeProduto} foi adicionado com sucesso!","Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception k)
                 {
