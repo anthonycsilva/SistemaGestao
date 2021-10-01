@@ -492,11 +492,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
+      "projectUniqueName": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
       "projectName": "PerolaDocesGestao",
-      "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
+      "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
       "packagesPath": "C:\\Users\\antho\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\PerolaDocesGestao\\obj\\",
+      "outputPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\PerolaDocesGestao\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\antho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -513,11 +513,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\BLL\\BLL.csproj"
+            "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\BLL\\BLL.csproj"
             },
-            "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\DAL\\DAL.csproj"
+            "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\DAL\\DAL.csproj"
             }
           }
         }

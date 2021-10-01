@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zP1XIhLqU3n5RKM5yxqe0j/zqu1x3F46Rq9rWfA3UfyawaU4uXq7DvLzSB34l+UgIQWSn9BLspy64+MR9yIpwQ==",
+  "dgSpecHash": "b4LLCRiijIB1LDPGOJexie0MXAStgXYt44UpqxJKY8euJeIXgB0QmlvnbUQUWzUJzsnmtFJuZQ/AhH6IZpAbKg==",
   "success": true,
-  "projectFilePath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\AnthonyDev\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
+  "projectFilePath": "D:\\Users\\antho\\Documents\\ProjetoPerolaDoces\\Testes\\PerolaDocesGestao\\PerolaDocesGestao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\antho\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\antho\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

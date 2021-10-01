@@ -12,6 +12,7 @@ namespace PerolaDocesGestao
 {
     public partial class Frm_InserirDistribuidor : Form
     {
+        BancoDistribuidora bd = new BancoDistribuidora();
         public Frm_InserirDistribuidor()
         {
             InitializeComponent();
@@ -39,8 +40,9 @@ namespace PerolaDocesGestao
             {
                 try
                 {
-                    Banco banco = new Banco();
-                    banco.insereDistribuidora(nomeDistro, cnpjDistro);
+                    Vendedor vd = new Vendedor();
+                    Distribuidora distro =  vd.cadastraDistribuidora(nomeDistro, cnpjDistro);
+                    bd.insereDistribuidora(distro);
                     MessageBox.Show($"Distribuidora, {nomeDistro}, cadastrada com sucesso!");
                 }
                 catch (Exception k)

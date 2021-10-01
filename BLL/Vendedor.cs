@@ -49,6 +49,14 @@ namespace BLL
             return cliente;
         }
 
+        public Distribuidora cadastraDistribuidora(string nomeDistro, string cnpjDistro)
+        {
+            Distribuidora distro = new Distribuidora();
+            distro.NOME_DISTRIBUIDORA = nomeDistro;
+            distro.CNPJ = cnpjDistro;
+            return distro;
+        }
+
         public DataTable getVendedores()
         {
             try
