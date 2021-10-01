@@ -60,6 +60,7 @@
     <Compile Include="Banco.cs" />
     <Compile Include="BancoCliente.cs" />
     <Compile Include="BancoDistribuidora.cs" />
+    <Compile Include="bancoPedidoItens.cs" />
     <Compile Include="BancoPessoa.cs" />
     <Compile Include="BancoProdutoEstoque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

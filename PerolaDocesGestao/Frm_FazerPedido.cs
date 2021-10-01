@@ -12,6 +12,10 @@ namespace PerolaDocesGestao
 {
     public partial class Frm_FazerPedido: Form
     {
+        MetodosGerais gerais = new MetodosGerais();
+        Temp temp = new Temp();
+        bancoPedidoItens banco = new bancoPedidoItens();
+
         public static int numeroPedidoAtual;
         public Frm_FazerPedido(int numeroPedido)
         {
@@ -19,9 +23,6 @@ namespace PerolaDocesGestao
             lbl_codigoPedido.Text = numeroPedido.ToString();
             numeroPedidoAtual = numeroPedido;
         }
-        Pedido pedido = new Pedido();
-        Banco banco = new Banco();
-        Temp temp = new Temp();
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,13 +35,12 @@ namespace PerolaDocesGestao
 
         private void dataGridView_ListaItens_Click(object sender, EventArgs e)
         {
-            DataTable dt_Pedidos = pedido.getTemp(Frm_FazerPedido.numeroPedidoAtual);
+            DataTable dt_Pedidos = temp.getTemp2();
             dataGridView_ListaItens.DataSource = dt_Pedidos;
 
             //DataTable dt_CalculoTotal = temp.getTemp2();
 
             DataTableReader dtr = new DataTableReader(dt_Pedidos);
-            MetodosGerais gerais = new MetodosGerais();
             double total;
             double totalFinal = 0;
             while (dtr.Read())
@@ -60,7 +60,8 @@ namespace PerolaDocesGestao
         private void Frm_FazerPedido_Load(object sender, EventArgs e)
         {
             banco.limpaTemp();
-            DataTable dt = pedido.getTemp(Frm_FazerPedido.numeroPedidoAtual);
+            Temp temp = new Temp();
+            DataTable dt = temp.getTemp2();
             dataGridView_ListaItens.DataSource = dt;
 
             Cliente clientes = new Cliente();
@@ -91,6 +92,35 @@ namespace PerolaDocesGestao
                 lbl_Cidade.Text = dtr["CIDADE"].ToString();
                 lbl_Bairro.Text = dtr["BAIRRO"].ToString();
             }
+        }
+
+        private void btn_removerProdutoDaLista_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_ListaItens.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView_ListaItens.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView_ListaItens.Rows[selectedrowindex];
+                string cellValue = Convert.ToString(selectedRow.Cells["ID_PRODUTO"].Value);
+                int id_produtoSelecionado = gerais.converteStringInt(cellValue);
+                try
+                {
+                    banco.deletaItemTemp(id_produtoSelecionado);
+                    MessageBox.Show("O Produto selecionado foi deletado com sucesso!");
+                    DataTable dt = temp.getTemp2();
+                    dataGridView_ListaItens.DataSource = dt;
+                }
+                catch (Exception k)
+                {
+                    MessageBox.Show($"Erro!: {k}");
+                    throw k;
+                }
+
+            }
+            else
+            {
+                return;
+            }
+
         }
     }
 }

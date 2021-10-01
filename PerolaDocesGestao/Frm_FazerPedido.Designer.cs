@@ -46,7 +46,7 @@ namespace PerolaDocesGestao
             this.dataGridView_ListaItens = new System.Windows.Forms.DataGridView();
             this.btn_SalvarPedido = new System.Windows.Forms.Button();
             this.btn_AdicionarItem = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_removerProdutoDaLista = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_totalGeral = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -225,18 +225,19 @@ namespace PerolaDocesGestao
             this.btn_AdicionarItem.UseVisualStyleBackColor = false;
             this.btn_AdicionarItem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_removerProdutoDaLista
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(424, 738);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 23);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Remover Item";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_removerProdutoDaLista.BackColor = System.Drawing.Color.Gray;
+            this.btn_removerProdutoDaLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_removerProdutoDaLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_removerProdutoDaLista.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_removerProdutoDaLista.Location = new System.Drawing.Point(424, 738);
+            this.btn_removerProdutoDaLista.Name = "btn_removerProdutoDaLista";
+            this.btn_removerProdutoDaLista.Size = new System.Drawing.Size(139, 23);
+            this.btn_removerProdutoDaLista.TabIndex = 31;
+            this.btn_removerProdutoDaLista.Text = "Remover Item";
+            this.btn_removerProdutoDaLista.UseVisualStyleBackColor = false;
+            this.btn_removerProdutoDaLista.Click += new System.EventHandler(this.btn_removerProdutoDaLista_Click);
             // 
             // label11
             // 
@@ -280,7 +281,7 @@ namespace PerolaDocesGestao
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbl_totalGeral);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_removerProdutoDaLista);
             this.Controls.Add(this.btn_AdicionarItem);
             this.Controls.Add(this.btn_SalvarPedido);
             this.Controls.Add(this.dataGridView_ListaItens);
@@ -326,7 +327,7 @@ namespace PerolaDocesGestao
         private System.Windows.Forms.DataGridView dataGridView_ListaItens;
         private System.Windows.Forms.Button btn_SalvarPedido;
         private System.Windows.Forms.Button btn_AdicionarItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_removerProdutoDaLista;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_totalGeral;
         private System.Windows.Forms.Button button3;

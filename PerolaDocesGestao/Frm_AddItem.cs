@@ -12,7 +12,7 @@ namespace PerolaDocesGestao
 {
     public partial class Frm_AddItem : Form
     {
-        Banco banco = new Banco();
+        bancoPedidoItens banco = new bancoPedidoItens();
         MetodosGerais metodosAnthony = new MetodosGerais();
         public Frm_AddItem()
         {

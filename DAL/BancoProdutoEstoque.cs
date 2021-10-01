@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -50,6 +51,25 @@ namespace DAL
 
                 throw e;
             }
+        }
+
+        public int VerificaExistencia()
+        {
+            Banco banco = new Banco();
+            string pesquisaProduto = "SELECT TOP 1 * FROM [Produto] ORDER BY ID_PRODUTO DESC";
+            SqlDataAdapter resultados = new SqlDataAdapter(pesquisaProduto, banco.CONEXAO);
+            DataTable ultimoSelecioando = new DataTable();
+            resultados.Fill(ultimoSelecioando);
+            DataTableReader dt = new DataTableReader(ultimoSelecioando);
+            int idInteiro = 0;
+            while (dt.Read())
+            {
+                string idString = dt["ID_PRODUTO"].ToString();
+                idInteiro = Int32.Parse(idString);
+            }
+            return idInteiro;
+
+
         }
     }
 }
