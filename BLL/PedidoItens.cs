@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace BLL
 {
-    public class PedidoItens
+    public class PedidoItens : DadosBancoBLL
     {
         public int ID_PEDIDOITENS { get; set; }
 
@@ -21,9 +21,8 @@ namespace BLL
         {
             try
             {
-                Banco banco = new Banco();
                 string comando = $"SELECT * FROM PedidoItens WHERE ID_PEDIDOITENS = {id_pedidoItens}";
-                SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
+                SqlDataAdapter resultado = new SqlDataAdapter(comando, CONEXAO);
                 DataTable dataTable = new DataTable();
                 resultado.Fill(dataTable);
                 return dataTable;

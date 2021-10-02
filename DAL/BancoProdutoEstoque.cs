@@ -38,6 +38,7 @@ namespace DAL
             }
         }
 
+
         public void insereEstoque(int id_produto, string data_entrada, int unidade, int id_distribuidora, SqlConnection con)
         {
             string instrucaoProduto = $"insert into Estoque (ID_PRODUTO, DATA_ENTRADA, UNIDADES, ID_DISTRIBUIDORA) values ({id_produto},'{data_entrada}', {unidade},{id_distribuidora});";

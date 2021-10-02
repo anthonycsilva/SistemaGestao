@@ -9,16 +9,15 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    public class Estoque
+    public class Estoque : DadosBancoBLL
     {
      public DataTable getDadosEstoque()
         {
             string instrucao = "SELECT Produto.ID_PRODUTO, Produto.NOME_PRODUTO,Estoque.DATA_ENTRADA,Estoque.UNIDADES,Produto.PRECO from Produto inner join Estoque on Produto.ID_PRODUTO = Estoque.ID_PRODUTO;";
-            Banco banco = new Banco();
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, CONEXAO);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
@@ -43,10 +42,9 @@ namespace BLL
 
                                 AND NOME_PRODUTO like '%{texto}%'; ";
 
-            Banco banco = new Banco();
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, CONEXAO);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
@@ -59,7 +57,6 @@ namespace BLL
         }
     public DataTable getDadosPesquisaID (string numero)
         {
-            Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
             string instrucao = $@"SELECT Produto.ID_PRODUTO,
@@ -76,7 +73,7 @@ namespace BLL
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, CONEXAO);
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }

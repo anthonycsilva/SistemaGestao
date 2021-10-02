@@ -14,16 +14,17 @@ namespace BLL
         public string NOME_PRODUTO { get; set; }
         public string PRECO { get; set; }
 
+        private DadosBancoBLL BANCO { get; set; } = new DadosBancoBLL();
+
 
         public DataTable getProdutoQuantidade()
         {
             string instrucao = "SELECT Produto.ID_PRODUTO, Produto.NOME_PRODUTO,Estoque.UNIDADES,Produto.PRECO from Produto inner join Estoque on Produto.ID_PRODUTO = Estoque.ID_PRODUTO;";
-            Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, BANCO.CONEXAO);
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }
@@ -37,12 +38,11 @@ namespace BLL
         public DataTable getProduto()
         {
             string instrucao = "SELECT * FROM Produto";
-            Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, BANCO.CONEXAO);
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }
@@ -56,14 +56,13 @@ namespace BLL
         }
         public DataTable getDadosPesquisaNome(string input)
         {
-            Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
             string instrucao = $@"SELECT * FROM PRODUTO WHERE NOME_PRODUTO LIKE '%{input}%'";
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, BANCO.CONEXAO);
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }
@@ -76,14 +75,13 @@ namespace BLL
         }
         public DataTable getDadosPesquisaID(string numero)
         {
-            Banco banco = new Banco();
             DataTable dataTable = new DataTable();
 
             string instrucao = $@"SELECT * FROM PRODUTO WHERE ID_PRODUTO LIKE '%{numero}%'";
 
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, BANCO.CONEXAO);
                 dataAdapter.Fill(dataTable);
                 return dataTable;
             }

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Pessoa
+    public class Pessoa : DadosBancoBLL
     {
         public int ID_PESSOA { get; set; }
         public string NOME { get; set; }
         public int IDADE { get; set; }
         public string CPF { get; set; }
+
 
     }
 }

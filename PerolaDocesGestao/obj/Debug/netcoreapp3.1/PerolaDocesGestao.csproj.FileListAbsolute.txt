@@ -127,3 +127,4 @@ D:\Users\antho\Documents\ProjetoPerolaDoces\Testes\PerolaDocesGestao\obj\Debug\n
 D:\Users\antho\Documents\ProjetoPerolaDoces\Testes\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.dll
 D:\Users\antho\Documents\ProjetoPerolaDoces\Testes\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.pdb
 D:\Users\antho\Documents\ProjetoPerolaDoces\Testes\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.genruntimeconfig.cache
+D:\Users\antho\Documents\ProjetoPerolaDoces\AnthonyDev\PerolaDocesGestao\obj\Debug\netcoreapp3.1\PerolaDocesGestao.Frm_alteraProduto.resources

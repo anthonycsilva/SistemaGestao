@@ -19,14 +19,12 @@ namespace BLL
         public int NUMERO_RESIDENCIA { get; set; }
         public string CEP { get; set; }
 
-
         public DataTable getClientes()
         {
             try
             {
-                Banco banco = new Banco();
                 string comando = "SELECT Pessoa.ID_PESSOA, Pessoa.NOME,Pessoa.CPF, Cliente.CIDADE,Cliente.ESTADO FROM Pessoa INNER JOIN Cliente ON Pessoa.ID_PESSOA = Cliente.ID_PESSOA;";
-                SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
+                SqlDataAdapter resultado = new SqlDataAdapter(comando, CONEXAO);
                 DataTable dataTable = new DataTable();
                 resultado.Fill(dataTable);
                 return dataTable;
@@ -43,9 +41,9 @@ namespace BLL
         {
             try
             {
-                Banco banco = new Banco();
+                
                 string comando = $"SELECT Pessoa.ID_PESSOA, Pessoa.NOME,Pessoa.CPF, Cliente.CIDADE,Cliente.BAIRRO, Cliente.RUA,Cliente.ESTADO FROM Pessoa INNER JOIN Cliente ON Pessoa.ID_PESSOA = Cliente.ID_PESSOA WHERE NOME = '{nome}';";
-                SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
+                SqlDataAdapter resultado = new SqlDataAdapter(comando, CONEXAO);
                 DataTable dt = new DataTable();
                 resultado.Fill(dt);
                 return dt;
