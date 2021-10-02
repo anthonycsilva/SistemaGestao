@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    public class Pedido
+    public class Pedido : DadosBancoBLL
     {
         public int ID_PEDIDOITENS { get; set; }
         public int ID_PEDIDO { get; set; }
@@ -17,9 +17,6 @@ namespace BLL
         public int ID_VENDEDOR { get; set; }
         public string PRECO_TOTAL { get; set; }
 
-
-        Banco banco = new Banco();
-
         public DataTable getTemp(int id_pedidoItens)
         {
             try
@@ -27,7 +24,7 @@ namespace BLL
                 string comando = $@"SELECT ID_PRODUTO, NOME_PRODUTO, QTD_ESTOQUE AS QTD_ESCOLHIDA, PRECO_UNIDADE AS PRECO FROM PedidoItens WHERE ID_PEDIDOITENS={id_pedidoItens};";
 
 
-                SqlDataAdapter resultado = new SqlDataAdapter(comando, banco.CONEXAO);
+                SqlDataAdapter resultado = new SqlDataAdapter(comando, CONEXAO);
                 DataTable dataTable = new DataTable();
                 resultado.Fill(dataTable);
                 return dataTable;

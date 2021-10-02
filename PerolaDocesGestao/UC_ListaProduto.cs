@@ -14,7 +14,7 @@ namespace PerolaDocesGestao
     {
         Produto produto = new Produto();
         MetodosGerais gerais = new MetodosGerais();
-        Banco banco = new Banco();
+        BancoProdutoEstoque banco = new BancoProdutoEstoque();
         public UC_ListaProduto()
         {
             InitializeComponent();
@@ -47,17 +47,10 @@ namespace PerolaDocesGestao
             foreach (DataGridViewRow row in dataGridView_Produto.SelectedRows)
             {
                 string id_produtoString = row.Cells[0].Value.ToString();
-                produto.ID_PRODUTO = gerais.converteStringInt(id_produtoString);
-                try
-                {
-                    banco.alteraProduto(produto);
-                    MessageBox.Show($"Produto foi deletado do sistema", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception k)
-                {
-                    MessageBox.Show("Ocorreu um Erro, verifique o que foi selecionado", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    throw k;
-                }
+                Frm_alteraProduto alteraProduto = new Frm_alteraProduto(id_produtoString);
+                alteraProduto.ShowDialog();
+                
+               
             }
         }
     }

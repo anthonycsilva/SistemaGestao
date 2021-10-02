@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    public class Distribuidora
+    public class Distribuidora : DadosBancoBLL
     {
         public int ID_DISTRIBUIDORA { get; set; }
         public string NOME_DISTRIBUIDORA { get; set; }
@@ -17,11 +17,10 @@ namespace BLL
         public DataTable getDistribuidoras()
         {
             string instrucao = "SELECT * FROM Distribuidora;";
-            Banco banco = new Banco();
-
+            
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, CONEXAO);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 return dataTable;
@@ -37,10 +36,10 @@ namespace BLL
         public int getDistribuidorasID(string nome)
         {
             string instrucao =$"SELECT ID_DISTRIBUIDORA FROM Distribuidora WHERE NOME_DISTRIBUIDORA = '{nome}';";
-            Banco banco = new Banco();
+            
             try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(instrucao, CONEXAO);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 DataTableReader dtReader = new DataTableReader(dataTable);

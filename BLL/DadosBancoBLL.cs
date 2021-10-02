@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using BLL;
 
-namespace DAL
+namespace BLL
 {
-    public class Banco
+    public class DadosBancoBLL
     {
         public string CONEXAO { get; set; } = @"Server=DESKTOP-5P62EHD\SQLEXPRESS;Database=PerolaDocesGestao;Trusted_Connection=True;";
 
@@ -33,4 +32,3 @@ namespace DAL
         }
     }
 }
-

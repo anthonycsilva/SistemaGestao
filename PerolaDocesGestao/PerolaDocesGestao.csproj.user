@@ -4,7 +4,10 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="CadastrarCliente.cs">
+    <Compile Update="Frm_alteraProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_CadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Frm_AddItem.cs">

@@ -61,11 +61,11 @@ namespace BLL
         {
             try
             {
-                Banco banco = new Banco();
+                
                 string instrucao = @"select Vendedor.ID_VENDEDOR, Pessoa.NOME, Pessoa.CPF, Pessoa.IDADE FROM Vendedor
                                  INNER JOIN Pessoa on Vendedor.ID_PESSOA = Pessoa.ID_PESSOA
                                  where Pessoa.VENDEDOR = 1;";
-                SqlDataAdapter resultado = new SqlDataAdapter(instrucao, banco.CONEXAO);
+                SqlDataAdapter resultado = new SqlDataAdapter(instrucao, CONEXAO);
                 DataTable dataTable = new DataTable();
                 resultado.Fill(dataTable);
                 return dataTable;

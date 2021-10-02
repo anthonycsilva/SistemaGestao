@@ -8,6 +8,8 @@ namespace BLL
 {
     public class MetodosGerais
     {
+
+
         public string retornaNome(string nome)
         {
             return nome;
